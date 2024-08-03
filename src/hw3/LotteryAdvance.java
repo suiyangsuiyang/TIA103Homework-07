@@ -4,41 +4,62 @@
 
 package hw3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LotteryAdvance {
 
-	public int random() {
-		int a = (int)(Math.random()*49);
-		return a;
-	}
-	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("請輸入1~9你不想要的數字");
-		int j = sc.nextInt();
+	int inputvalue;
+	int arraylength = 0;
+	int arrayvalue;
 
-		outer: 
-			while (j > 9 || j < 1) {
+	public int input() {
+		System.out.println("請輸入1~9你不想要的數字");
+		Scanner sc = new Scanner(System.in);
+		inputvalue = sc.nextInt(); 					// inputvalue為輸入值
+
+		outer: while (inputvalue > 9 || inputvalue < 1) {
 			System.out.println("別鬧了~~請輸入1~9你不想要的數字");
-			j = sc.nextInt();
+			inputvalue = sc.nextInt();
 			continue outer;
 		}
-
-		
-		for (int i = 1; i <= 49; i++) {
-			if (i % 10 != j && i / 10 != j) {
-				for (int k = 1 ; i>0 ; k++) {
-					
-//					int x [] = new int[k];
-				}
-				
-				}
-
-			}
-
-		}
-
+		return inputvalue;
 	}
 
+	public int arrayLength() {
+		int[] x = new int[arraylength]; 			// x陣列，長度為arraylength
 
+		for (arrayvalue = 1 ; arrayvalue <= 49; arrayvalue++) {
+			if (arrayvalue % 10 != inputvalue && arrayvalue / 10 != inputvalue) {
+//			System.out.print("可選i " + i + " "); 	// 排掉討厭數字後，arrayvalue為可選號碼
+				if (arrayvalue > 0) {
+					arraylength++;
+				}
+			}		
+		}
+		return arraylength;
+	}
+
+	public static void main(String[] args) {
+
+		LotteryAdvance lucky = new LotteryAdvance();
+		lucky.input();
+		lucky.arrayLength();
+//
+//			x[k] = i;
+//			System.out.print(x[k - 1] + " ");
+
+//			int newk = 0; // newk 為x陣列的亂數索引值
+//			newk = (int) (Math.random() * k);
+//
+//			int[] newx = new int[6];
+//			for (int m = 0; m < 6; m++) {
+//				newx[m] = x[newk];
+//				System.out.println();
+//				System.out.println();
+//				System.out.print(newx[m] + " ");
+//			}
+		System.out.println("陣列總數 " + lucky.arrayLength() + "個可選數字"); // k為陣列總數 (有幾個數字)
+
+	}
+}
