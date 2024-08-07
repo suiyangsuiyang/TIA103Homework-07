@@ -1,13 +1,13 @@
-package hw7;
+package hwext;
 
-public abstract class HW7_1_Pen {
+public abstract class HWext__Pen {
 	
 	private String brand;
 	private double price;
 	
-	public HW7_1_Pen() {}
+	public HWext__Pen() {}
 	
-	public HW7_1_Pen(String brand, double price) {
+	public HWext__Pen(String brand, double price) {
 		this.brand = brand;
 		this.price = price;
 	}

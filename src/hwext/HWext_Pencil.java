@@ -1,10 +1,11 @@
-package hw7;
+package hwext;
 
-public class HW7_1_Pencil extends HW7_1_Pen{
+public class HWext_Pencil {
+
 	
 	public void write() {
 		System.out.print("削鉛筆再寫");
 	};
 
-
+	
 }
