@@ -12,7 +12,6 @@ import java.io.IOException;
 public class HW7_1_SampleTxt {
 
 	public static void main(String[] args) throws IOException {
-		int i;
 		try {
 			File f1 = new File("C:\\Users\\Tibame_T14\\Desktop\\緯育TIA103-JAVA技術養成班\\基礎JAVA(吳冠宏)\\作業\\Homework7附件\\\\Sample.txt");
 
@@ -36,13 +35,8 @@ public class HW7_1_SampleTxt {
 			br.close();
 			fr.close();
 		} catch (IOException e) {
+			System.err.print(e);
 		}
 	}
 }
-
-		
-//		p1("Sample.txt檔案 共有" + f1.length()+"個位元組，");
-
-//		Sample.txt檔案共有xxx個位元組，yyy個字元，zzz列資料
-
 
